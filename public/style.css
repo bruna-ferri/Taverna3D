@@ -1,3 +1,15 @@
+:root {
+  --grafite: #1c1f24;
+  --grafite-2: #2a2e35;
+  --filamento: #ff842c;
+  --filamento-escuro: #d9631a;
+  --mesa: #eef1f4;
+  --linha: #d5dbe2;
+  --texto: #1c1f24;
+  --texto-suave: #5b6470;
+  --card: #ffffff;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,78 +17,160 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f7f2eb;
-  color: #292929;
+  font-family: "Figtree", "Segoe UI", Arial, sans-serif;
+  color: var(--texto);
   min-height: 100vh;
+  /* grade da mesa de impressão */
+  background-color: var(--mesa);
+  background-image:
+    linear-gradient(var(--linha) 1px, transparent 1px),
+    linear-gradient(90deg, var(--linha) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-position: -1px -1px;
 }
 
-header {
-  background-color: #242424;
-  color: white;
-  text-align: center;
-  padding: 35px 20px;
+/* Cabeçalho com linhas de camada, como uma peça impressa */
+.topo {
+  background-color: var(--grafite);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0 5px,
+    rgba(255, 132, 44, 0.09) 5px 6px
+  );
+  border-bottom: 4px solid var(--filamento);
+  padding: 44px 20px 40px;
 }
 
-header h1 {
-  color: #ff842c;
-  font-size: 36px;
-  margin-bottom: 8px;
+.topo__conteudo {
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-header p {
-  color: #dddddd;
+.topo h1 {
+  font-family: "Bricolage Grotesque", "Segoe UI", Arial, sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.4rem, 6vw, 3.6rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--filamento);
+}
+
+.topo p {
+  margin-top: 10px;
+  font-size: 1.05rem;
+  color: #c3c9d1;
 }
 
 main {
-  max-width: 850px;
-  margin: 70px auto;
-  padding: 30px;
-  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 56px 20px 80px;
 }
 
 main h2 {
-  font-size: 28px;
-  margin-bottom: 12px;
+  font-family: "Bricolage Grotesque", "Segoe UI", Arial, sans-serif;
+  font-weight: 600;
+  font-size: 1.9rem;
+  letter-spacing: -0.01em;
 }
 
-main p {
-  color: #666666;
-  margin-bottom: 35px;
+.intro {
+  margin: 6px 0 32px;
+  color: var(--texto-suave);
 }
 
-nav {
+.menu {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 
-nav button {
-  background-color: white;
-  color: #292929;
-  border: 2px solid #f0d9c4;
-  border-radius: 12px;
-  padding: 30px 15px;
-  font-size: 18px;
-  font-weight: bold;
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  text-align: left;
+  font: inherit;
+  color: var(--texto);
+  background: var(--card);
+  border: 1px solid var(--linha);
+  border-left: 6px solid var(--grafite);
+  border-radius: 6px;
+  padding: 26px 24px;
   cursor: pointer;
-  transition: 0.2s;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
 }
 
-nav button:hover {
-  background-color: #ff842c;
-  color: white;
-  border-color: #ff842c;
-  transform: translateY(-3px);
+.card svg {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 14px;
+  fill: none;
+  stroke: var(--grafite);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke 0.2s;
+}
+
+.card__titulo {
+  font-family: "Bricolage Grotesque", "Segoe UI", Arial, sans-serif;
+  font-weight: 600;
+  font-size: 1.35rem;
+}
+
+.card__texto {
+  font-size: 0.95rem;
+  color: var(--texto-suave);
+}
+
+.card:hover {
+  border-left-color: var(--filamento);
+  box-shadow: 0 8px 20px rgba(28, 31, 36, 0.12);
+  transform: translateY(-2px);
+}
+
+.card:hover svg {
+  stroke: var(--filamento-escuro);
+}
+
+.card:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.card:focus-visible {
+  outline: 3px solid var(--filamento);
+  outline-offset: 3px;
 }
 
 @media (max-width: 600px) {
-  main {
-    margin: 30px auto;
-    padding: 20px;
+  .topo {
+    padding: 32px 20px 28px;
   }
 
-  nav {
+  main {
+    padding: 36px 20px 56px;
+  }
+
+  .menu {
     grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card svg {
+    transition: none;
+  }
+
+  .card:hover {
+    transform: none;
   }
 }
