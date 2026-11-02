@@ -1,20 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #f5f0e8;
-  text-align: center;
-  padding: 50px;
+  background-color: #f7f2eb;
+  color: #292929;
+  min-height: 100vh;
 }
 
-h1 {
-  color: #e87520;
-}
-
-button {
-  background-color: #e87520;
+header {
+  background-color: #242424;
   color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 12px 24px;
+  text-align: center;
+  padding: 35px 20px;
+}
+
+header h1 {
+  color: #ff842c;
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+
+header p {
+  color: #dddddd;
+}
+
+main {
+  max-width: 850px;
+  margin: 70px auto;
+  padding: 30px;
+  text-align: center;
+}
+
+main h2 {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+main p {
+  color: #666666;
+  margin-bottom: 35px;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+nav button {
+  background-color: white;
+  color: #292929;
+  border: 2px solid #f0d9c4;
+  border-radius: 12px;
+  padding: 30px 15px;
+  font-size: 18px;
+  font-weight: bold;
   cursor: pointer;
+  transition: 0.2s;
+}
+
+nav button:hover {
+  background-color: #ff842c;
+  color: white;
+  border-color: #ff842c;
+  transform: translateY(-3px);
+}
+
+@media (max-width: 600px) {
+  main {
+    margin: 30px auto;
+    padding: 20px;
+  }
+
+  nav {
+    grid-template-columns: 1fr;
+  }
 }
