@@ -99,7 +99,10 @@ main h2 {
   border-radius: 6px;
   padding: 26px 24px;
   cursor: pointer;
-  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s,
+    transform 0.2s;
 }
 
 .card svg {
@@ -173,4 +176,12 @@ main h2 {
   .card:hover {
     transform: none;
   }
+}
+.menu a.card {
+  text-decoration: none;
+  color: inherit;
+}
+
+.menu a.card:visited {
+  color: inherit;
 }
