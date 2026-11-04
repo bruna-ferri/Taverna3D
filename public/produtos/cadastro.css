@@ -1,0 +1,163 @@
+/* Página de cadastro de produtos */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #faf7f2;
+}
+
+/* Área principal */
+
+main {
+  max-width: 850px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+main > a {
+  display: inline-block;
+  margin-bottom: 25px;
+  color: #c45e19;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+main > a:hover {
+  color: #ff842c;
+}
+
+main h2 {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 30px;
+  margin-bottom: 8px;
+  color: #292929;
+}
+
+main .intro {
+  color: #777;
+  margin-bottom: 30px;
+}
+
+/* Formulário */
+
+#formProduto {
+  background: #ffffff;
+  padding: 35px;
+  border: 1px solid #f0e1d2;
+  border-radius: 16px;
+  box-shadow: 0 6px 25px rgba(70, 40, 20, 0.06);
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#formProduto label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #383838;
+  margin-top: 8px;
+}
+
+#formProduto input,
+#formProduto select,
+#formProduto textarea {
+  width: 100%;
+  padding: 13px 15px;
+  border: 1px solid #ded8d1;
+  border-radius: 9px;
+  background-color: #fff;
+  color: #333;
+  font-family: "Figtree", sans-serif;
+  font-size: 15px;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+#formProduto textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+#formProduto input:focus,
+#formProduto select:focus,
+#formProduto textarea:focus {
+  outline: none;
+  border-color: #ff842c;
+  box-shadow: 0 0 0 3px rgba(255, 132, 44, 0.13);
+}
+
+/* Botões */
+
+#formProduto > div {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+#formProduto button {
+  padding: 13px 24px;
+  border: none;
+  border-radius: 9px;
+  font-family: "Figtree", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+
+#formProduto button[type="submit"] {
+  background-color: #ff842c;
+  color: white;
+  flex: 1;
+}
+
+#formProduto button[type="submit"]:hover {
+  background-color: #e96e17;
+  transform: translateY(-2px);
+}
+
+#formProduto button[type="reset"] {
+  background-color: #f1ece7;
+  color: #555;
+}
+
+#formProduto button[type="reset"]:hover {
+  background-color: #e5ddd5;
+}
+
+/* Mensagem de confirmação */
+
+#mensagem {
+  margin-top: 20px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #25804d;
+}
+
+/* Responsividade */
+
+@media (max-width: 600px) {
+  main {
+    margin: 20px auto;
+    padding: 15px;
+  }
+
+  main h2 {
+    font-size: 25px;
+  }
+
+  #formProduto {
+    padding: 22px;
+  }
+
+  #formProduto > div {
+    flex-direction: column;
+  }
+}
