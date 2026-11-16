@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Produtos | Taverna 3D</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="consulta.css">
+</head>
+<body>
+
+    <main class="consulta-container">
+
+        <header class="consulta-header">
+            <div>
+                <h1>Consulta de Produtos</h1>
+                <p>Gerencie os produtos cadastrados na Taverna 3D.</p>
+            </div>
+
+            <a href="produtos.html" class="btn-voltar">Voltar</a>
+        </header>
+
+        <section class="consulta-filtros">
+            <input
+                type="text"
+                id="pesquisa"
+                placeholder="Pesquisar produto pelo nome..."
+            >
+
+            <select id="filtroCategoria">
+                <option value="">Todas as categorias</option>
+            </select>
+
+            <a href="cadastro.html" class="btn-cadastrar">
+                + Novo produto
+            </a>
+        </section>
+
+        <section class="consulta-resumo">
+            <p>Produtos encontrados: <strong id="totalProdutos">0</strong></p>
+        </section>
+
+        <section class="tabela-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Categoria</th>
+                        <th>Preço</th>
+                        <th>Estoque</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+
+                <tbody id="listaProdutos">
+                    <!-- Produtos carregados pelo JavaScript -->
+                </tbody>
+            </table>
+        </section>
+
+        <p id="mensagemVazia" class="mensagem-vazia" hidden>
+            Nenhum produto encontrado.
+        </p>
+
+    </main>
+
+    <script src="consulta.js"></script>
+</body>
+</html>
