@@ -140,3 +140,23 @@
         box-sizing: border-box;
     }
 }
+
+/* Organização da tabela de produtos */
+
+.tabela-container th {
+    white-space: nowrap;
+}
+
+.tabela-container td {
+    vertical-align: middle;
+}
+
+.tabela-container td:nth-child(3) {
+    min-width: 180px;
+    max-width: 280px;
+    overflow-wrap: anywhere;
+}
+
+.tabela-container td:nth-child(5) {
+    font-weight: bold;
+}

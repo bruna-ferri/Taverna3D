@@ -79,6 +79,7 @@ function exibirProdutos() {
         const dados = [
             produto.nome,
             produto.categoria,
+            produto.descricao,
             formatarPreco(produto.preco),
             produto.estoque
         ];
