@@ -1,0 +1,259 @@
+
+/* ========================================
+   TAVERNA 3D - CADASTRO DE CLIENTES
+   Identidade visual do painel inicial
+======================================== */
+
+:root {
+    --grafite: #1c1f24;
+    --grafite-2: #2a2e35;
+    --filamento: #ff842c;
+    --filamento-escuro: #d9631a;
+    --mesa: #eef1f4;
+    --linha: #d5dbe2;
+    --texto: #1c1f24;
+    --texto-suave: #5b6470;
+    --card: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fundo */
+
+body {
+    font-family: "Figtree", "Segoe UI", Arial, sans-serif;
+    color: var(--texto);
+    min-height: 100vh;
+    background-color: var(--mesa);
+    background-image:
+        linear-gradient(var(--linha) 1px, transparent 1px),
+        linear-gradient(90deg, var(--linha) 1px, transparent 1px);
+    background-size: 32px 32px;
+    background-position: -1px -1px;
+}
+
+/* Cabeçalho */
+
+header {
+    background-color: var(--grafite);
+    background-image: repeating-linear-gradient(
+        to bottom,
+        transparent 0 5px,
+        rgba(255, 132, 44, 0.09) 5px 6px
+    );
+    border-bottom: 4px solid var(--filamento);
+    padding: 44px 20px 40px;
+    text-align: center;
+}
+
+header h1 {
+    font-family: "Bricolage Grotesque", "Segoe UI", Arial, sans-serif;
+    font-weight: 800;
+    font-size: clamp(2.4rem, 6vw, 3.6rem);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--filamento);
+    margin: 0 0 8px;
+}
+
+header p {
+    color: #c3c9d1;
+    font-size: 1.05rem;
+}
+
+/* Conteúdo principal */
+
+main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 36px;
+    background-color: var(--card);
+    border: 1px solid var(--linha);
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(28, 31, 36, 0.08);
+}
+
+h2,
+h3 {
+    font-family: "Bricolage Grotesque", "Segoe UI", Arial, sans-serif;
+    color: var(--grafite);
+}
+
+h2 {
+    font-size: 1.9rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.3rem;
+    margin-top: 25px;
+    margin-bottom: 12px;
+}
+
+main > p {
+    color: var(--texto-suave);
+    margin-bottom: 25px;
+}
+
+/* Formulário */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+label {
+    font-weight: bold;
+    color: var(--grafite);
+    margin-top: 8px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    background-color: #ffffff;
+    color: var(--texto);
+    border: 1px solid var(--linha);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus,
+select:focus {
+    border-color: var(--filamento);
+    box-shadow: 0 0 0 3px rgba(255, 132, 44, 0.15);
+}
+
+/* Botões */
+
+button {
+    padding: 13px 18px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--filamento);
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    margin-top: 8px;
+}
+
+button:hover {
+    background-color: var(--filamento-escuro);
+    box-shadow: 0 4px 10px rgba(28, 31, 36, 0.12);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+button:focus-visible {
+    outline: 3px solid var(--filamento);
+    outline-offset: 3px;
+}
+
+button[type="reset"] {
+    background-color: var(--grafite-2);
+}
+
+button[type="reset"]:hover {
+    background-color: var(--grafite);
+}
+
+/* Mensagens */
+
+#mensagem {
+    margin-top: 15px;
+    font-weight: bold;
+    color: var(--filamento-escuro);
+}
+
+/* Histórico de clientes */
+
+#historicoClientes {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+#historicoClientes > div {
+    background-color: var(--card);
+    border: 1px solid var(--linha);
+    border-left: 5px solid var(--grafite);
+    border-radius: 6px;
+    padding: 18px;
+    line-height: 1.8;
+    color: var(--texto);
+}
+
+/* Área de consulta */
+
+#consultaClientes {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Link voltar */
+
+main > a {
+    display: inline-block;
+    margin-top: 25px;
+    color: var(--filamento-escuro);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main > a:hover {
+    color: var(--filamento);
+    text-decoration: underline;
+}
+
+/* Divisor */
+
+hr {
+    border: none;
+    border-top: 1px solid var(--linha);
+    margin: 35px 0;
+}
+
+/* Responsividade */
+
+@media (max-width: 600px) {
+    header {
+        padding: 32px 20px 28px;
+    }
+
+    main {
+        margin: 15px;
+        padding: 20px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+/* Acessibilidade */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+    }
+}
